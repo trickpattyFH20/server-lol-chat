@@ -1,0 +1,25 @@
+{
+  "name": "server-lol-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trickpattyFH20/server-lol-chat.git"
+  },
+  "author": "Patrick Lawler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trickpattyFH20/server-lol-chat/issues"
+  },
+  "homepage": "https://github.com/trickpattyFH20/server-lol-chat#readme",
+  "dependencies": {
+    "camel-case": "^1.2.2",
+    "clone": "^1.0.2",
+    "ltx": "^2.2.0",
+    "node-xmpp-client": "^3.0.0"
+  }
+}

@@ -13,8 +13,8 @@ var XmppClient = require("node-xmpp-client"),
 	CHAT_PASSWORD_SUFFIX = "",
 	CHAT_STANDARD_RESOURCE = "xiff",
 	CHAT_CUSTOM_RESOURCE = "plc",
-  	CHAT_KEEPALIVE_RESOURCE = "plckeepalive",
-  	CHAT_KEEPALIVE_INTERVAL = 5 * 60 * 1000, // 5 min
+ //  	CHAT_KEEPALIVE_RESOURCE = "plckeepalive",
+ //  	CHAT_KEEPALIVE_INTERVAL = 5 * 60 * 1000, // 5 min
 	XMPP_DEFINED_ERROR_CONDITIONS = [
 		"bad-request",
 		"conflict",
@@ -479,23 +479,23 @@ function ChatClient(options) {
 			xmlns: "jabber:iq:roster"
 		});
 
-    var keepaliveJid = new Jid();
-    keepaliveJid.node = client.jid.user;
-    keepaliveJid.domain = client.jid.domain;
-    keepaliveJid.resource = CHAT_KEEPALIVE_RESOURCE;
+    // var keepaliveJid = new Jid();
+    // keepaliveJid.node = client.jid.user;
+    // keepaliveJid.domain = client.jid.domain;
+    // keepaliveJid.resource = CHAT_KEEPALIVE_RESOURCE;
 
-    var keepalive = new ltx.Element("message", {
-      to: keepaliveJid.toString(),
-      type: "chat"
-    }).c("body").t("keepalive");
+	    // var keepalive = new ltx.Element("message", {
+	    //   to: keepaliveJid.toString(),
+	    //   type: "chat"
+	    // }).c("body").t("keepalive");
 
 		client.send(rosterRequest);
 		client.send(presence);
-    setInterval(function () {
-      if (that.isOnline() && !(that.isClosed())) {
-        client.send(keepalive);
-      }
-    }, CHAT_KEEPALIVE_INTERVAL);
+    // setInterval(function () {
+    //   if (that.isOnline() && !(that.isClosed())) {
+    //     client.send(keepalive);
+    //   }
+    // }, CHAT_KEEPALIVE_INTERVAL);
 
 		isOnline = true;
 		that.emit("online");

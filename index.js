@@ -39,19 +39,22 @@ var XmppClient = require("node-xmpp-client"),
 		"unexpected-request"
 	], // Defined Error Conditions according to http://xmpp.org/rfcs/rfc3920.html#rfc.section.9.3.3
 	XMPP_PRESENCE_TYPES = [
-	    {
-	      type: "chat",
-	      color: "green"
-	    }, {
-			  type: "away",
-	      color: "red"
-	    }, {
-	      type: "dnd",
-	      color: "yellow"
-	    }, {
-	      type: "mobile",
-	      color: "white"
-	    }
+		{
+			type: "chat",
+			color: "green"
+		},
+		{
+			type: "away",
+			color: "red"
+		},
+		{
+			type: "dnd",
+			color: "yellow"
+		},
+		{
+			type: "mobile",
+			color: "white"
+		}
 	],
   EVENT_NAMES = [
     "error",

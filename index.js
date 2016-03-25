@@ -245,10 +245,16 @@ function ChatClient(options) {
 		var items = stanza.getChild("query").getChildren("item");
 
 		items.forEach(function (item) {
+			var catchFail;
 			var friend = friendlist.filter(function (f) {
 				return f.jid === item.attr("jid");
 			})[0];
 
+			if(typeof friend != 'object'){
+				console.log('catchFail - handleRosterUpdate - friend not in list')
+				catchFail = true;
+				friend = {};
+			}
 			friend.name = item.attr("name");
 
 			var noteElement = item.getChild("note"),
@@ -279,8 +285,9 @@ function ChatClient(options) {
 					delete friend.group;
 				}
 			}
-
-			that.emit("roster:update", clone(friend));
+			if(!catchFail){
+				that.emit("roster:update", clone(friend));
+			}
 		});
 	}
 	function handleRosterPush(stanza) {

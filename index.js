@@ -464,6 +464,15 @@ function ChatClient(options) {
 			type: "subscribe"
 		});
 		client.send(subStanza);
+
+		var rosterRequest = new ltx.Element("iq", {
+			type: "get",
+			id: getUid("plc-roster-request")
+		}).c("query", {
+			xmlns: "jabber:iq:roster"
+		});
+		client.send(rosterRequest);
+
 		return true;
 	};
 	this.removeFriend = function removeFriend(jid) {

@@ -451,18 +451,25 @@ function ChatClient(options) {
 	this.addFriend = function addFriend(jid) {
 		if (!isOnline || isClosed) return false;
 
-		var presenceStanza;
+		var stanza;
 		stanza = new ltx.Element("presence", {
+			to: jid,
+			type: "subscribed"
+		});
+		client.send(stanza);
+
+		var subStanza;
+		subStanza = new ltx.Element("presence", {
 			to: jid,
 			type: "subscribe"
 		});
-		client.send(stanza);
+		client.send(subStanza);
 		return true;
 	};
 	this.removeFriend = function removeFriend(jid) {
 		if (!isOnline || isClosed) return false;
 
-		var presenceStanza;
+		var stanza;
 		stanza = new ltx.Element("presence", {
 			to: jid,
 			type: "unsubscribe"

@@ -448,6 +448,17 @@ function ChatClient(options) {
 		client.send(presenceStanza);
 		return true;
 	};
+	this.removeFriend = function removeFriend(jid) {
+		if (!isOnline || isClosed) return false;
+
+		var presenceStanza;
+		stanza = new ltx.Element("presence", {
+			to: jid,
+			type: "unsubscribe"
+		});
+		client.send(stanza);
+		return true;
+	};
 	this.getOwnJid = function getOwnJid(includeResource) {
 		if (!isOnline || isClosed) return false;
 
@@ -483,7 +494,7 @@ function ChatClient(options) {
 		//console.log('we are online')
 		var presence = new ltx.Element("presence", {}).
 			c("show").t("chat").up().
-			c("status").t("leaguechat");
+			c("status").t("");
 
 		var rosterRequest = new ltx.Element("iq", {
 			type: "get",

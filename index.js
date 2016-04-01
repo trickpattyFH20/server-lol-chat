@@ -448,6 +448,17 @@ function ChatClient(options) {
 		client.send(presenceStanza);
 		return true;
 	};
+	this.addFriend = function addFriend(jid) {
+		if (!isOnline || isClosed) return false;
+
+		var presenceStanza;
+		stanza = new ltx.Element("presence", {
+			to: jid,
+			type: "subscribe"
+		});
+		client.send(stanza);
+		return true;
+	};
 	this.removeFriend = function removeFriend(jid) {
 		if (!isOnline || isClosed) return false;
 

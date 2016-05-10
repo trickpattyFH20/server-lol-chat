@@ -1,7 +1,8 @@
 # server-lol-chat
 example implementation: http://league.chat
 #### node connection to League of Legends chat servers
-###### refactored and based on:
+###### working as of: 5/10/26
+###### help from the creators of:
 * [node-lol-xmpp](https://github.com/pentarex/node-lol-xmpp)
 * [pilt-lib-chat](https://github.com/philippwiddra/pilt-lib-chat)
 #### example:

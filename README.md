@@ -1,7 +1,7 @@
 # server-lol-chat
 example implementation: http://league.chat
 #### node connection to League of Legends chat servers
-###### working as of: 5/10/26
+##### working as of: 5/10/26 patch 6.9
 #### example:
 ```
 var ChatClient = require("./core"),

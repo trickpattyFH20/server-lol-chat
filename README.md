@@ -28,6 +28,5 @@ client.on("roster", function (roster) {
     console.log(roster)
 });
 ```
-###### help from the creators of:
-* [node-lol-xmpp](https://github.com/pentarex/node-lol-xmpp)
+###### refactored, patched, and based on pilt-lib-chat:
 * [pilt-lib-chat](https://github.com/philippwiddra/pilt-lib-chat)

@@ -4,7 +4,7 @@ example implementation: http://league.chat
 ##### working as of: 5/10/26 patch 6.9
 
 #### Install
-`npm install server-lol-chat`
+`npm install --save server-lol-chat`
 
 #### example:
 ```

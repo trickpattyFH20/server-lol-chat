@@ -31,5 +31,4 @@ client.on("roster", function (roster) {
     console.log(roster)
 });
 ```
-###### refactored, patched, and based on pilt-lib-chat:
-* [pilt-lib-chat](https://github.com/philippwiddra/pilt-lib-chat)
+###### refactored, patched, and based on [pilt-lib-chat](https://github.com/philippwiddra/pilt-lib-chat) with help from philippwiddra

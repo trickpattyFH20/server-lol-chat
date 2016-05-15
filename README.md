@@ -2,10 +2,13 @@
 example implementation: http://league.chat
 #### node connection to League of Legends chat servers
 ##### working as of: 5/10/26 patch 6.9
+
+#### Install
+`npm install server-lol-chat`
+
 #### example:
 ```
-var ChatClient = require("./core"),
-    Jid = require("./core/jid"),
+var ChatClient = require("server-lol-chat"),
     client = new ChatClient({
         accountName: "",
         password: "",
